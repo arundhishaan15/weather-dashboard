@@ -54,7 +54,7 @@ getWeatherData = (city) => {
  * Retrieve weather data for UV Index
  */
 get_UV_Index_Data = (lat,lon) => {
-  const URL = "http://api.openweathermap.org/data/2.5/uvi";
+  const URL = "https://api.openweathermap.org/data/2.5/uvi";
   const FULL_URL = `${URL}?appid=${API_KEY}&lat=${lat}&lon=${lon}`;
   const weatherPromise = fetch(FULL_URL);
   return weatherPromise.then((response) => {
@@ -66,7 +66,7 @@ get_UV_Index_Data = (lat,lon) => {
  *  Get the weather forecast data for the next five days
  */
 getFiveDayForecast = (lat,lon) => {
-  const URL = "http://api.openweathermap.org/data/2.5/forecast";
+  const URL = "https://api.openweathermap.org/data/2.5/forecast";
   const FULL_URL = `${URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`;
   const weatherPromise = fetch(FULL_URL);
   return weatherPromise.then((response) => {
@@ -119,7 +119,7 @@ showWeatherData = (weatherData) => {
   console.log(weatherData);
   const dte = weatherData.dt;
   const Date = UNIX_To_Date(dte);
-  document.getElementById("img-container").src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+  document.getElementById("img-container").src = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
   document.getElementById("city-name").innerText = weatherData.name;
   document.getElementById("tod-date").innerText = `(${Date.slice(0,9)})`; // Gets date from -> "2019-12-9 10:30:15"
   document.getElementById("temperature").innerText = weatherData.main.temp;
@@ -151,7 +151,7 @@ showFiveDayForecast = () => {
         let start = `<div id="" class="card text-white bg-primary mb-3" style="max-width: 10rem;">
                       <div class="card-body">
                         <h5 class="card-title">${dte.slice(0,9)}</h5>
-                        <img id="card-img" src="http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png" alt="">
+                        <img id="card-img" src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png" alt="">
                         <ul class="list-unstyled mt-3 mb-4">
                           <li id="cardInfo">Temp: ${response.list[i].main.temp}°F</li> <br>
                           <li id="cardInfo">Humidity: ${response.list[i].main.humidity}%</li>
