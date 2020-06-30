@@ -11,6 +11,8 @@ let searches = [];
 let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
 
 window.onload = function() {
+  document.getElementById('city-input').focus();
+  document.getElementById('city-input').select();
   for(let i = 1; i < 6; i++) {
     let start = `<div id="" class="card text-white bg-primary mb-3" style="max-width: 10rem;">
                    <div class="card-body">
@@ -110,6 +112,8 @@ searchCity = () => {
       }
     });
     deleteAfterInput();
+    document.getElementById('city-input').focus();
+    document.getElementById('city-input').select();
 };
 
 /**
