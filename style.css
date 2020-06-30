@@ -6,7 +6,7 @@
 
 .left {
   width: 30%;
-} 
+}
 
 .right {
   width: 70%;
@@ -77,13 +77,13 @@
   color: white;
 }
 
-.card-header{
+.card-header {
   display: flex;
   background-color: antiquewhite;
   align-items: center;
   padding-left: 20px;
 }
- /* Mine */
+/* Mine */
 .navbar-brand {
   margin: 0 auto;
   padding-top: 0px;
@@ -118,7 +118,7 @@
   padding: 5px;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
 
 #card-img {
